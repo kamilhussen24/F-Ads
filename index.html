@@ -144,9 +144,16 @@
       display: grid;
       grid-template-columns: 1fr 110px;
       align-items: center;
+      justify-items: center; /* every cell content centered horizontally */
       gap: 12px;
       transition: all 0.3s ease;
       cursor: pointer;
+    }
+
+    /* left column (code-info) should stay left-aligned */
+    .code-card .code-info {
+      justify-self: start;
+      width: 100%;
     }
 
     .code-card:hover {
