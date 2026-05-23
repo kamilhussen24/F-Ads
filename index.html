@@ -1,495 +1,429 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1448517003086922');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1448517003086922&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KDex Invite লিস্ট থেকে কোড নিন, আর পেয়ে যান বিশেষ বোনাস ও সুবিধা!">
+  <title>KDex Invite List</title>
+  <link rel="icon" href="/group-logo.jpg" type="image/x-icon">
+  <link rel="canonical" href="https://partner-kdex-refer.vercel.app">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Brothers Traders</title>
+  <meta property="og:title" content="KDex Invite List | এক্সট্রা বোনাসসহ রেফার কোড">
+  <meta property="og:description" content="KDex Invite লিস্ট থেকে কোড নিন, আর পেয়ে যান বিশেষ বোনাস ও সুবিধা!">
+  <meta property="og:image" content="https://partner-kdex-refer.vercel.app/cover-bg.jpg">
+  <meta property="og:url" content="https://partner-kdex-refer.vercel.app">
+  <meta property="og:type" content="website">
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KDex Refer Code List">
+  <meta name="twitter:description" content="KDex Invite লিস্ট থেকে কোড নিন, আর পেয়ে যান বিশেষ বোনাস ও সুবিধা!">
+  <meta name="twitter:image" content="https://partner-kdex-refer.vercel.app/cover-bg.jpg">
 
-  body {
-    background-color: #121212;
-    color: #ffd700;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-    cursor: pointer;
-  }
+  <!-- Telegram Mini App SDK — required for openLink() -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  header {
-    background: linear-gradient(to bottom, #1f1f1f, #121212);
-    padding: 40px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
 
-  .custom-logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 0 8px #ffd700);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border-radius: 50%;
-    background: rgba(255, 215, 0, 0.1);
-    padding: 5px;
-  }
-  
-  .custom-logo:hover {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 12px #ffd700);
-    background: rgba(255, 215, 0, 0.2);
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: fadeIn 1.5s ease-in-out;
-    cursor: pointer;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .main-text {
-    margin: 40px auto;
-    width: 85%;
-    max-width: 800px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    animation: slideUp 1s ease-out;
-    cursor: pointer;
-  }
-
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(50px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .join-btn {
-    background: linear-gradient(135deg, #ffd700, #ff8c00);
-    color: #121212;
-    padding: 15px 40px;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-    margin: 20px auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: all 0.4s ease;
-    position: relative;
-    z-index: 10;
-  }
-
-  .join-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6);
-    background: linear-gradient(135deg, #ff8c00, #ffd700);
-  }
-
-  hr {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #ffd700, transparent);
-    margin: 50px auto;
-    width: 70%;
-  }
-
-  .privacy-box {
-    background-color: #1f1f1f;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 15px;
-    width: 85%;
-    max-width: 800px;
-    color: #ffd700;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
-    animation: fadeIn 2s ease-in-out;
-  }
-
-  .privacy-box h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .privacy-box p {
-    margin: 10px 0;
-    font-size: 1rem;
-  }
-
-  footer {
-    margin: 50px 0 30px;
-    padding: 0 20px;
-    font-size: 0.85rem;
-    color: #888;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: nowrap;
-  }
-
-  .copyright-text {
-    letter-spacing: 0.3px;
-    font-size: 0.85rem;
-    color: #888;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .copyright-text:hover {
-    color: #ffd700;
-    text-decoration: underline;
-  }
-
-  .telegram-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    background: linear-gradient(135deg, #ffd700, #ff8c00);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    box-shadow: 0 1px 5px rgba(255, 215, 0, 0.3);
-    flex-shrink: 0;
-    cursor: pointer;
-  }
-
-  .telegram-link:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 3px 10px rgba(255, 215, 0, 0.5);
-    background: linear-gradient(135deg, #ff8c00, #ffd700);
-  }
-
-  .telegram-link img {
-    width: 14px;
-    height: 14px;
-    filter: brightness(0) invert(1);
-    transition: all 0.3s ease;
-  }
-
-  .telegram-link:hover img {
-    transform: scale(1.1);
-  }
-
-  .icon-container {
-    margin: 20px 0;
-    cursor: pointer;
-  }
-
-  .icon-container img {
-    width: 50px;
-    height: auto;
-    margin: 0 10px;
-    filter: drop-shadow(0 0 5px #ffd700);
-    transition: transform 0.3s;
-    cursor: pointer;
-  }
-
-  .icon-container img:hover {
-    transform: scale(1.2);
-  }
-
-  .header-area {
-    cursor: pointer;
-  }
-
-  @media (min-width: 769px) {
-    footer {
-      gap: 10px;
+  <style>
+    :root {
+      --primary: #2ecc71;
+      --shadow: 0 8px 20px rgba(0,0,0,0.1);
+      --radius: 16px;
+      --accent: #fff3cd;
+      --accent-text: #d97706;
+      --code-color: #333;
     }
-    .copyright-text {
-      font-size: 0.9rem;
-    }
-    .telegram-link {
-      width: 24px;
-      height: 24px;
-    }
-    .telegram-link img {
-      width: 15px;
-      height: 15px;
-    }
-  }
 
-  @media (max-width: 768px) {
-    .custom-logo {
-      width: 60px;
-      height: 60px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #f7f9fc 0%, #e8edf3 100%);
+      color: #222;
+      line-height: 1.6;
+      padding-bottom: 30px;
     }
-    h1 {
-      font-size: 1.6rem;
+
+    .header {
+      width: 100%;
+      height: 210px;
+      position: relative;
+      border-bottom: 4px solid #fff;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
     }
-    .join-btn {
-      font-size: 1.2rem;
-      padding: 12px 30px;
+
+    .header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("cover-bg.jpg") center/cover no-repeat;
+      filter: blur(0.5px) brightness(0.7);
+      z-index: 0;
     }
-    footer {
+
+    .logo {
+      width: 86px; height: 86px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      overflow: hidden;
+      margin-bottom: 12px;
+      z-index: 1;
+    }
+    .logo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .header h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.35);
+      padding: 10px 30px;
+      border-radius: 12px;
+      letter-spacing: 0.6px;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: -30px auto 40px;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #EF0075;
+      margin-bottom: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .tap-hint {
+      text-align: center;
+      background: var(--accent);
+      color: var(--accent-text);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 6px;
+      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.15);
     }
-    .copyright-text {
-      font-size: 0.75rem;
-    }
-    .telegram-link {
-      width: 20px;
-      height: 20px;
-    }
-    .telegram-link img {
-      width: 11px;
-      height: 11px;
-    }
-  }
 
-  @media (max-width: 480px) {
-    footer {
-      gap: 5px;
+    .pt { text-align: center; margin-bottom: 25px; }
+    .pt span {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #333;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #f06292;
+      padding-bottom: 5px;
+      display: inline-block;
     }
-    .copyright-text {
-      font-size: 0.7rem;
+
+    .code-card {
+      background: #f9fbff;
+      border: 1.5px solid #dce6f0;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      display: grid;
+      grid-template-columns: 1fr 110px;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
-    .telegram-link {
-      width: 18px;
-      height: 18px;
+
+    .code-card:hover {
+      background: #eef5ff;
+      transform: translateY(-2px) scale(1.015);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
-    .telegram-link img {
-      width: 13px;
-      height: 13px;
+
+    .code-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      user-select: text;
     }
-  }
-</style>
+
+    .app-logo {
+      width: 26px; height: 26px;
+      border-radius: 6px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .code-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.3px;
+      user-select: text;
+    }
+
+    .code-value, .join-text {
+      font-family: 'Courier New', monospace;
+      color: var(--code-color);
+      font-size: 0.96rem;
+      font-weight: 600;
+      user-select: text;
+      padding: 2px 0;
+    }
+
+    .action-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      transition: all 0.2s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; /* horizontally center inside grid cell */
+    }
+
+    .action-btn:hover {
+      background: rgba(46, 204, 113, 0.1);
+      transform: scale(1.1);
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px; right: 20px;
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+      font-weight: 600;
+      font-size: 0.98rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      pointer-events: none;
+    }
+
+    .notification.show { opacity: 1; transform: translateY(0) scale(1); }
+    .notification::before { content: "✓"; font-size: 1.1em; font-weight: 700; }
+
+    .footer-notice {
+      max-width: 600px;
+      margin: 30px auto 0;
+      padding: 16px 20px;
+      background: #ffe0f0;
+      color: #d63384;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 0.94rem;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      line-height: 1.5;
+    }
+    .footer-notice a { color: #c61a6d; font-weight: 600; text-decoration: none; }
+    .footer-notice a:hover { text-decoration: underline; }
+
+    .footer { text-align: center; font-size: 0.88rem; color: #666; margin-top: 20px; }
+    .footer a { color: #2a3b8f; text-decoration: none; font-weight: 600; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .header h1 { font-size: 1.6rem; padding: 8px 20px; }
+      .container { margin: -25px 8px 30px; padding: 10px; }
+      .subtitle { font-size: 0.95rem; }
+      .tap-hint { font-size: 0.88rem; padding: 8px 14px; }
+      .code-card { padding: 14px 16px; grid-template-columns: 1fr 90px; }
+      .code-name { font-size: 0.98rem; }
+      .app-logo { width: 22px; height: 22px; }
+      .action-btn { font-size: 0.85rem; }
+      .notification {
+        top: 15px; right: 15px; left: 15px;
+        padding: 12px 20px;
+        font-size: 0.92rem;
+        border-radius: 10px;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <header class="header-area">
-    <img class="custom-logo" src="https://raw.githubusercontent.com/kamilhussen24/Your-Ads/refs/heads/main/IMG_20260410_132400_333.jpg"
-         alt="Brothers Traders Logo">
-    <h1>Brothers Traders</h1>
-  </header>
 
-  <div class="main-text">
-    আপনি যদি Quotex  এ ট্রেড করে লসে থাকেন তাহলে আপনি আমাদের এই <strong>Brothers Traders</strong> গ্রুপে জয়েন হতে পারেন <br><br>
-    তুমি যদি প্রফেশনালি ট্রেড করতে চাও তাহলে আজই জয়েন করো! এটা একদম ফ্রি!
+  <div class="header">
+    <div class="logo">
+      <img src="group-logo.jpg" alt="KDex Logo">
+    </div>
+    <h1>KDex Refer Code List</h1>
   </div>
 
-  <div class="icon-container">
-    <img src="https://img.icons8.com/ios-filled/50/ffd700/stock-share.png" alt="trading" />
-    <img src="https://img.icons8.com/ios-filled/50/ffd700/graph.png" alt="chart" />
-    <img src="https://img.icons8.com/ios-filled/50/ffd700/money-bag.png" alt="profit" />
+  <div class="container">
+    <p class="subtitle">Unlock Extra Bonuses With KDex Referral Codes!</p>
+
+    <div class="tap-hint">
+      👆 ট্যাপ করুন — কোড কপি অথবা জয়েন হবে!
+    </div>
+
+    <div class="pt">
+      <span>Our Top Partners</span>
+    </div>
+
+    <div id="codeList"></div>
+
+    <div class="footer-notice">
+      এখান থেকে আপনি পার্টনার রেফার কোড ব্যবহার করলে <strong>এক্সট্রা বোনাস ও সুবিধা</strong> পাবেন, 
+      এবং সব বিষয় নতুন আপডেট পেতে চোখ রাখুন আমাদের টেলিগ্রাম গ্রুপে: 
+      <a href="https://t.me/kdexchat" target="_blank">KDex Chat</a>
+    </div>
+
+    <div class="footer">
+      Made with <span style="color: #e11d48;">❤</span> by 
+      <a href="https://t.me/Kdex_update" target="_blank">KDex Update</a>
+    </div>
   </div>
 
-  <button class="join-btn">
-    <img src="https://img.icons8.com/ios-filled/50/telegram.png" 
-         alt="telegram" 
-         style="height: 24px; vertical-align: middle; filter: invert(1);" />
-    JOIN NOW
-  </button>
-  <hr>
-
-  <div class="privacy-box">
-    <h2>Privacy Policy</h2>
-    <p>আমাদের ওয়েবসাইট আপনার কোনো ব্যক্তিগত তথ্য সংগ্রহ করে না।</p>
-    <p>এই পেজ শুধুমাত্র আপনাকে আমাদের অফিসিয়াল Telegram চ্যানেলে রিডাইরেক্ট করার জন্য তৈরি।</p>
-    <p>আমরা কোনো লগইন, পেমেন্ট, বা রেজিস্ট্রেশনের তথ্য গ্রহণ করি না।</p>
-    <p>আপনার গোপনীয়তা আমাদের কাছে গুরুত্বপূর্ণ। আমরা কোনো cookies বা tracking tools ব্যবহার করি না।</p>
-    <p>প্রশ্ন থাকলে আমাদের Telegram চ্যানেলে যোগাযোগ করতে পারেন।</p>
-  </div>
-
-  <footer>
-    <span class="copyright-text">© 2026 Ads By KDex</span>
-    <a href="https://t.me/+mjeIPVeI4iAzYzNl" target="_blank" rel="noopener noreferrer" class="telegram-link" title="Join our Telegram">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram-app.png" alt="Telegram">
-    </a>
-  </footer>
+  <div id="notify" class="notification">কোড কপি হয়েছে!</div>
 
   <script>
-    const MAIN_TELEGRAM_LINK = 'https://t.me/+jIjxjPWNQK40ZTZl';
-    const KDEX_TELEGRAM_LINK = 'https://t.me/+mjeIPVeI4iAzYzNl';
-    
-    // Redirect to main Telegram (Brothers Traders)
-    function redirectToMainTelegram() {
-      window.open(MAIN_TELEGRAM_LINK, '_blank');
-      setTimeout(function() {
-        window.location.href = MAIN_TELEGRAM_LINK;
-      }, 2000);
-    }
-    
-    // Redirect to KDex Telegram (copyright owner)
-    function redirectToKDexTelegram() {
-      window.open(KDEX_TELEGRAM_LINK, '_blank');
-      setTimeout(function() {
-        window.location.href = KDEX_TELEGRAM_LINK;
-      }, 2000);
-    }
-    
-    // Trigger Purchase event + redirect to Main Telegram
-    function redirectWithPurchaseEvent() {
-      fbq('track', 'Purchase', {
-        value: 100,
-        currency: 'BDT'
+    const referCodes = [
+      { name: "Binance",  code: "KDEX24",        color: "#f3ba2f", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYdrdJCiSbpwmtGNLX-gAXBCGhtbvpaDqHYSUfJvr9TC7oqIMk6MBGNkw&s=10" },
+      { name: "Bybit",    code: "1ZO9ZYL",        color: "#ff9900", logo: "https://pbs.twimg.com/media/GqA0rVvXkAAs_3M.png" },
+      { name: "Bitmart",  code: "KDex24",          color: "#18181d", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8FF65YnnDRinTgdUAdj4g7VBS8s5Fork5eGMjUqnnkg&s=10" },
+      { name: "Krak",     code: "@KamilHussen24",  color: "#fc655d", logo: "https://storage.googleapis.com/neobanque-website/logo/krak.webp" },
+      { name: "Cypher",   code: "KAMIL24",          color: "#f7c645", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Ozy0j7leaSCyckz_aPk_z869-CblgpdVbr-G76rjZg&s=10" },
+      { name: "Offramp",  code: "6hs8p3",           color: "#24cade", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8RAP79B2PcEtwhdz8oLWTOnQmMGIcJyjIekRjmh7AihAjDdNvefZ0LVc&s=10" },
+      { name: "Pokepay",  code: "265342",            color: "#09bb8a", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvqV3ANIq-MiV7ysKIIsqsa3db8wCEF53PYk48H20hiYfXa6lAps5Hck4F&s=10" },
+      { name: "Payy",     code: "RXH3A6",            color: "#bfde14", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyk7fFuEk4kxtE5V_6uKHQE-2eHd0q-JsOKY66dVnu5g&s=10" },
+      { name: "Rizon",    code: "G3NZA",             color: "#E8E80B", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQihdA6P0kVTLdlS4xwyyE6lxYz7_BCW0X9UVyJhFrF5A&s=10" },
+      { name: "Fin",      code: "kamilhussen24",     color: "#cbd902", logo: "https://play-lh.googleusercontent.com/Sdx79r7diaFvmAnsX4go72Q93pf_6FXRKxqsg8lUHAKVJhyoq8UiNLOBDwb4de7RVXC0cpJXYXA_vvU5NL8lMjk=w480-h960-rw" },
+      { name: "Roogoo",   code: "erpsr8",            color: "#0392ff", logo: "https://www.roogoo.com/logo-round.svg" },
+      { name: "Kolo",     url:  "https://get.kolo.xyz/p101510", color: "#14d659", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRMvRiKuhRYZnGwQtqPMNFZqY20j60dUlaAu2_yUPhdg&s=10" },
+    ];
+
+    const codeList = document.getElementById("codeList");
+    const notify   = document.getElementById("notify");
+
+    referCodes.forEach((item) => {
+      const { name, code, url, color, logo } = item;
+
+      const card = document.createElement("div");
+      card.className = "code-card";
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `${name} ${code ? 'কপি' : 'ভিজিট'} করুন`);
+
+      const buttonText = url ? "Tap to Join" : "Tap to Copy";
+      const bottomText = code
+        ? `<div class="code-value">${code}</div>`
+        : `<div class="join-text">join now →</div>`;
+
+      card.innerHTML = `
+        <div class="code-info">
+          <img src="${logo}" alt="${name} logo" class="app-logo">
+          <div>
+            <div class="code-name" style="color:${color};">${name}</div>
+            ${bottomText}
+          </div>
+        </div>
+        <button class="action-btn" aria-label="${buttonText}">${buttonText}</button>
+      `;
+
+      const handler = () => {
+        if (url) openExternal(url);
+        else if (code) copyToClipboard(code);
+      };
+
+      card.addEventListener("click", (e) => {
+        if (e.target.closest("button")) return;
+        handler();
       });
-      
-      window.open(MAIN_TELEGRAM_LINK, '_blank');
-      setTimeout(function() {
-        window.location.href = MAIN_TELEGRAM_LINK;
-      }, 2000);
-    }
-    
-    // ========== PURCHASE ENABLED ZONES (Go to Main Telegram with Purchase count) ==========
-    // 1. Logo
-    const logo = document.querySelector('.custom-logo');
-    if(logo) {
-      logo.addEventListener('click', function(e) {
+
+      card.querySelector("button").addEventListener("click", (e) => {
         e.stopPropagation();
-        redirectWithPurchaseEvent();
+        handler();
       });
-    }
-    
-    // 2. Header area (entire header section)
-    const headerArea = document.querySelector('.header-area');
-    if(headerArea) {
-      headerArea.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectWithPurchaseEvent();
-      });
-    }
-    
-    // 3. JOIN NOW button
-    const joinBtn = document.querySelector('.join-btn');
-    if(joinBtn) {
-      joinBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectWithPurchaseEvent();
-      });
-    }
-    
-    // 4. Icon container (entire container)
-    const iconContainer = document.querySelector('.icon-container');
-    if(iconContainer) {
-      iconContainer.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectWithPurchaseEvent();
-      });
-    }
-    
-    // 5. Individual icons
-    const allIcons = document.querySelectorAll('.icon-container img');
-    allIcons.forEach(icon => {
-      icon.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectWithPurchaseEvent();
-      });
+
+      codeList.appendChild(card);
     });
-    
-    // 6. Main text area
-    const mainText = document.querySelector('.main-text');
-    if(mainText) {
-      mainText.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectWithPurchaseEvent();
-      });
-    }
-    
-    // 7. H1 title
-    const title = document.querySelector('h1');
-    if(title) {
-      title.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectWithPurchaseEvent();
-      });
-    }
-    
-    // ========== KDEX ZONES (Go to KDex Telegram, NO Purchase) ==========
-    // Copyright text
-    const copyrightText = document.querySelector('.copyright-text');
-    if(copyrightText) {
-      copyrightText.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectToKDexTelegram();
-      });
-    }
-    
-    // Footer telegram icon
-    const footerLink = document.querySelector('.telegram-link');
-    if(footerLink) {
-      footerLink.addEventListener('click', function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        redirectToKDexTelegram();
-      });
-    }
-    
-    // ========== OTHER ZONES (Go to Main Telegram, NO Purchase) ==========
-    // Privacy box area
-    const privacyBox = document.querySelector('.privacy-box');
-    if(privacyBox) {
-      privacyBox.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectToMainTelegram();
-      });
-    }
-    
-    // HR line
-    const hrLine = document.querySelector('hr');
-    if(hrLine) {
-      hrLine.addEventListener('click', function(e) {
-        e.stopPropagation();
-        redirectToMainTelegram();
-      });
-    }
-    
-    // Remaining body areas
-    document.body.addEventListener('click', function(e) {
-      let target = e.target;
-      
-      // Check if click is on any handled element
-      if(target.closest('.custom-logo') || 
-         target.closest('.header-area') || 
-         target.closest('.join-btn') || 
-         target.closest('.icon-container') || 
-         target.closest('.main-text') ||
-         target.closest('h1') ||
-         target.closest('.telegram-link') ||
-         target.closest('.copyright-text') ||
-         target.closest('.privacy-box') ||
-         target.closest('hr')) {
+
+    // Opens URL in external/system browser
+    // Priority: 1) Telegram WebApp.openLink  2) Chrome direct  3) Intent fallback  4) window.open
+    function openExternal(url) {
+
+      // 1. Telegram Mini App — openLink() forces external browser, no prompt
+      if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.openLink) {
+        window.Telegram.WebApp.openLink(url);
         return;
       }
-      
-      // Any other click - main telegram, no purchase
-      redirectToMainTelegram();
-    });
+
+      if (/android/i.test(navigator.userAgent)) {
+        // 2. Try Chrome directly — no "Open in Chrome" prompt, opens immediately
+        const chromeUrl = url.replace(/^https?:\/\//, 'googlechrome://');
+        const chromeFallback = url.replace(/^https?:\/\//, 'googlechromes://');
+
+        // Use a hidden iframe trick to try Chrome scheme without navigating away
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+
+        let chromeOpened = false;
+        const timer = setTimeout(() => {
+          // 3. Chrome didn't open — fallback to Intent URL
+          document.body.removeChild(iframe);
+          if (!chromeOpened) {
+            const encoded = encodeURIComponent(url);
+            const intentUrl = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;S.browser_fallback_url=${encoded};end`;
+            window.location.href = intentUrl;
+          }
+        }, 1500);
+
+        window.addEventListener('blur', () => {
+          chromeOpened = true;
+          clearTimeout(timer);
+          try { document.body.removeChild(iframe); } catch(e) {}
+        }, { once: true });
+
+        iframe.src = chromeUrl;
+        return;
+      }
+
+      // 4. iOS / Desktop
+      window.open(url, "_blank");
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        notify.classList.add("show");
+        setTimeout(() => notify.classList.remove("show"), 1500);
+      }).catch(() => {
+        alert("দুঃখিত কপি করতে সমস্যা হয়েছে, ম্যানুয়ালি কপি করুন।");
+      });
+    }
   </script>
 </body>
 </html>
